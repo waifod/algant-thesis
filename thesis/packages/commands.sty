@@ -26,7 +26,7 @@
 
 % Date and signature
 \newcommand{\datesign}[2]{% First the date, then the signature
-  \fillfield{Regensburg, Germany}\hfill\fillfield{Matteo Durante}
+  \fillfield{#1}\hfill\fillfield{#2}
 }
 
 % ============================================================================
@@ -84,7 +84,6 @@
 
 % --- Parametrized Commands ---
 \newcommand{\Ho}[1]{\mathbf{Ho}(#1)}            % Homotopy category Ho(C)
-\newcommand{\Lang}[1]{\mathsf{Lang}(#1)}        % Language functor
 
 % --- Categories (Boldface) ---
 % Font convention: Use bold for standard mathematical/foundational categories
@@ -144,14 +143,6 @@
 % 5. Special Arrows
 % ============================================================================
 
-\DeclareMathOperator{\sto}{\twoheadrightarrow}   % Surjective/epi arrow
-
-% Double right arrow (for special morphisms)
-\newcommand\dhrightarrow{%
-  \mathrel{\ooalign{$\rightarrow$\cr%
-  $\mkern3.5mu\rightarrow$}}
-}
-
 % Double extensible right arrow (with labels)
 \newcommand\dhxrightarrow[2][]{%
   \mathrel{\ooalign{$\xrightarrow[#1\mkern4mu]{#2\mkern4mu}$\cr%
@@ -205,28 +196,6 @@
   #3 \noloc #4%
 }
 
-% Draw equivalence: F : C ⇄ D : G without perpendicular  
-% Usage: \equivalence{F}{C}{D}{G}
-\newcommand{\equivalence}[4]{%
-  % #1 : #2 <arrows> #3 : #4
-  #1\colon #2%
-  \mathrel{\vcenter{%
-    \offinterlineskip\m@th
-    \ialign{%
-      \hfil$##$\hfil\cr
-      \longrightharpoonup\cr
-      \noalign{\kern-.3ex}
-      \longleftharpoondown\cr
-    }%
-  }}%
-  #3 \noloc #4%
-}
-
 % ============================================================================
 % 7. Special Symbols
 % ============================================================================
-
-% Yoneda embedding symbol (よ)
-\DeclareFontFamily{U}{min}{}
-\DeclareFontShape{U}{min}{m}{n}{<-> udmj30}{}
-\DeclareMathOperator{\yo}{\text{\usefont{U}{min}{m}{n}\symbol{'210}}}
