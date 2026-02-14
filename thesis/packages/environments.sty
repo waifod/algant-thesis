@@ -32,3 +32,24 @@
 
 \newtheorem*{organization}{Organization}
 \newtheorem*{finalthm}{Theorem \ref{finalthm}}
+
+% ============================================================================
+% Hyperref Anchor Fix
+% ============================================================================
+% All numbered environments share the thm counter (reset per section), but
+% hyperref creates anchors using the environment name (rmk.4, defn.1, etc.),
+% causing duplicates across chapters. We override \theH<env> for each to
+% include the chapter number.
+\newcommand{\uniquetheorem}{\thechapter.\thesection.\arabic{thm}}
+\renewcommand{\theHthm}{\uniquetheorem}
+\renewcommand{\theHdefn}{\uniquetheorem}
+\renewcommand{\theHprop}{\uniquetheorem}
+\renewcommand{\theHlem}{\uniquetheorem}
+\renewcommand{\theHcor}{\uniquetheorem}
+\renewcommand{\theHconj}{\uniquetheorem}
+\renewcommand{\theHrmk}{\uniquetheorem}
+\renewcommand{\theHexmp}{\uniquetheorem}
+\renewcommand{\theHconstruction}{\uniquetheorem}
+\renewcommand{\theHnotation}{\uniquetheorem}
+\renewcommand{\theHinitiality}{\uniquetheorem}
+\renewcommand{\theHintlang}{\uniquetheorem}
