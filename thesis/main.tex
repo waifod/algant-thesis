@@ -3,15 +3,17 @@
 % ============================================================================
 % Package Loading Order
 % ============================================================================
-% 1. quiver      - Self-contained commutative diagram support
-% 2. packages    - All basic LaTeX package imports
-% 3-5. The following depend on packages being loaded first:
+% 1. quiver       - Self-contained commutative diagram support
+% 2. packages     - All basic LaTeX package imports (amsmath, amssymb, etc.)
+% 3. math         - Shared math operators and notation (needs amsmath)
+% 4-6. The following depend on packages being loaded first:
 %      settings     - Document configuration (uses geometry, biblatex, etc.)
-%      commands     - Custom commands and math operators (uses color, amsmath, etc.)
+%      commands     - Document-specific commands (fillfield, datesign)
 %      environments - Theorem environments (uses amsthm)
 
-\usepackage{packages/quiver}
+\usepackage{../quiver}
 \usepackage{packages/packages}
+\usepackage{../math}
 \usepackage{packages/settings}
 \usepackage{packages/commands}
 \usepackage{packages/environments}
